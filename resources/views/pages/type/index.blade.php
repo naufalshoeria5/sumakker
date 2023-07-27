@@ -15,14 +15,14 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>DataTable</h3>
+                    <h3>Data Jenis Surat</h3>
                     <p class="text-subtitle text-muted">For user to check they list</p>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">DataTable</li>
+                            <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Jenis Surat</li>
                         </ol>
                     </nav>
                 </div>
@@ -52,7 +52,7 @@
                     <table class="table table-striped" id="table1">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th class="text-center" style="width: 8%;">#</th>
                                 <th>Jenis Surat</th>
                                 <th>Action</th>
                             </tr>
@@ -60,21 +60,21 @@
                         <tbody>
                             @foreach ($types as $key => $item)
                                 <tr>
-                                    <td>1</td>
+                                    <td class="text-center" style="width: 8%;">{{ $loop->iteration }}</td>
                                     <td>{{ $item }}</td>
                                     <td>
                                         <div class="btn-group dropend me-1 mb-1">
                                             <button type="button" class="btn dropdown-toggle"
                                                 data-bs-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">
-                                                Action
+                                                <i class="bi bi-three-dots-vertical"></i>
                                             </button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Edit</a>
                                                 <form method="POST" action="/type/{{ $key }}">
                                                     @method('delete')
                                                     @csrf
-                                                    <button class="bg-danger text-white p-2 dropdown-item">Hapus</button>
+                                                    <button class="dropdown-item">Hapus</button>
                                                 </form>
                                             </div>
                                         </div>

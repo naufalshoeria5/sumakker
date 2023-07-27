@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Type\StoreRequest;
 use App\Models\LetterType;
 use Illuminate\Http\Request;
 
@@ -35,39 +36,15 @@ class TypeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $type = $this->type->fill($request->except('_token'));
 
         $type->save();
 
-        return redirect()->back()->withSuccess('berhasil');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return redirect()->back()->withSuccess('Berhasil Tambah Jenis Surat');
     }
 
     /**
@@ -85,6 +62,6 @@ class TypeController extends Controller
     {
         $this->type::where('id', $id)->delete();
 
-        return redirect()->back()->withSuccess('berhasil');
+        return redirect()->back()->withSuccess('Berhasil Hapus Data');
     }
 }
