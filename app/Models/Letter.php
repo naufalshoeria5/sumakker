@@ -24,8 +24,6 @@ class Letter extends Model implements HasMedia
 
     /**
      * Get the unit that owns the Letter
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function unit(): BelongsTo
     {
@@ -34,14 +32,11 @@ class Letter extends Model implements HasMedia
 
     /**
      * Get the letterType that owns the Letter
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function letterType(): BelongsTo
     {
         return $this->belongsTo(letterType::class, 'letter_type_id', 'id');
     }
-
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +49,7 @@ class Letter extends Model implements HasMedia
      *
      * @return scope
      */
-    function scopeFilter($query, object $filter)
+    public function scopeFilter($query, object $filter)
     {
         // If filter by status exists
         $query->when($filter->status ?? false, fn ($query, $status) => $query->where('status', $status));

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\LetterExport;
 use App\Http\Requests\Letter\StoreRequest;
 use App\Http\Requests\Letter\UpdateRequest;
 use App\Models\Letter;
 use App\Models\LetterType;
 use App\Models\Unit;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LetterController extends Controller
 {
@@ -19,7 +21,9 @@ class LetterController extends Controller
      * @var \App\Models\LetterType
      */
     protected $letter;
+
     protected $unit;
+
     protected $letterType;
 
     /**
@@ -40,7 +44,7 @@ class LetterController extends Controller
     public function index()
     {
         $filter = (object) [
-            'status' => request()->input('status')
+            'status' => request()->input('status'),
         ];
 
         $letters = $this->letter::filter($filter)
@@ -55,8 +59,8 @@ class LetterController extends Controller
      */
     public function create()
     {
-        $units  = $this->unit::get()->pluck('name', 'id');
-        $letterType  = $this->letterType::get()->pluck('name', 'id');
+        $units = $this->unit::get()->pluck('name', 'id');
+        $letterType = $this->letterType::get()->pluck('name', 'id');
 
         return view('pages.letter.create', compact('units', 'letterType'));
     }
@@ -74,7 +78,7 @@ class LetterController extends Controller
             'from' => $request->from,
             'regarding' => $request->regarding,
             'unit_id' => $request->unit_id,
-            'letter_type_id' => $request->letter_type_id
+            'letter_type_id' => $request->letter_type_id,
         ]);
 
         $this->letter
@@ -111,8 +115,8 @@ class LetterController extends Controller
             abort(404);
         }
 
-        $units  = $this->unit::get()->pluck('name', 'id');
-        $letterType  = $this->letterType::get()->pluck('name', 'id');
+        $units = $this->unit::get()->pluck('name', 'id');
+        $letterType = $this->letterType::get()->pluck('name', 'id');
 
         return view('pages.letter.edit', compact('letter', 'units', 'letterType'));
     }
@@ -136,7 +140,7 @@ class LetterController extends Controller
             'from' => $request->from,
             'regarding' => $request->regarding,
             'unit_id' => $request->unit_id,
-            'letter_type_id' => $request->letter_type_id
+            'letter_type_id' => $request->letter_type_id,
         ]);
 
         if ($request->hasFile('file')) {
@@ -157,6 +161,29 @@ class LetterController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $letter = $this->letter::find($id);
+
+        if (!$letter) {
+            abort(404);
+        }
+
+        $letter->clearMediaCollection('letter');
+
+        $this->letter::where('id', $id)->delete();
+
+        return redirect()->back()->withSuccess('Berhasil Hapus Data');
+    }
+
+    /**
+     * export the specified resource from storage.
+     */
+    public function export(Request $request)
+    {
+        $month = date('F');
+        $year = date('Y');
+
+        $filename = "$request->status Periode $month Tahun $year.xlsx";
+
+        return Excel::download(new LetterExport($request), $filename);
     }
 }

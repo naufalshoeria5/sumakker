@@ -40,7 +40,8 @@
                 </h4>
 
                 <div class="d-flex justify-between gap-3">
-                    <a href="/admin-panel/letter/regular/export?start_date={{ request('start_date') }}&end_date={{ request('end_date') }}&status={{ request('status') }}" class="mr-2">
+                    {{-- <a href="/admin-panel/letter/regular/export?start_date={{ request('start_date') }}&end_date={{ request('end_date') }}&status={{ request('status') }}" class="mr-2"> --}}
+                    <a href="/surat/export?status={{ request('status') }}" class="mr-2">
                         <button type="button" class="btn btn-sm btn-outline-success btn-min-width">
                             Export Data
                         </button>

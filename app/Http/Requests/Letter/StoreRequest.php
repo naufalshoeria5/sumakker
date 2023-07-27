@@ -30,7 +30,7 @@ class StoreRequest extends FormRequest
             'unit_id' => 'required|exists:units,id',
             'letter_type_id' => 'required|exists:letter_types,id',
             'status' => 'required|in:Surat Masuk,Surat Keluar',
-            'file' => 'required|file'
+            'file' => 'required|file',
         ];
     }
 }

@@ -33,7 +33,7 @@
                 {{-- End Navbar --}}
 
                 {{-- Main Content --}}
-                <div id="main-content">
+                <div id="main-content" style="height: 100vh">
                     {{ $slot }}
                     {{-- Start Footer --}}
                     @include('partials.footer')

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UserExport;
 use App\Http\Requests\Users\StoreRequest;
 use App\Http\Requests\Users\UpdateRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserController extends Controller
 {
@@ -54,7 +55,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'username' => $request->username,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
         ]);
 
         $user->save();
@@ -113,5 +114,18 @@ class UserController extends Controller
         $this->user::where('id', $id)->delete();
 
         return redirect()->back()->withSuccess('Berhasil Hapus Data');
+    }
+
+    /**
+     * export the specified resource from storage.
+     */
+    public function export()
+    {
+        $month = date('F');
+        $year = date('Y');
+
+        $filename = "User Periode $month Tahun $year.xlsx";
+
+        return Excel::download(new UserExport(), $filename);
     }
 }

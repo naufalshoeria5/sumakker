@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\TypeExport;
 use App\Http\Requests\Type\StoreRequest;
 use App\Models\LetterType;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class TypeController extends Controller
 {
@@ -63,5 +65,18 @@ class TypeController extends Controller
         $this->type::where('id', $id)->delete();
 
         return redirect()->back()->withSuccess('Berhasil Hapus Data');
+    }
+
+    /**
+     * export the specified resource from storage.
+     */
+    public function export()
+    {
+        $month = date('F');
+        $year = date('Y');
+
+        $filename = "Jenis Surat Periode $month Tahun $year.xlsx";
+
+        return Excel::download(new TypeExport(), $filename);
     }
 }

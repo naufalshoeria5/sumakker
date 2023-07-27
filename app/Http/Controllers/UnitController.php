@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UnitExport;
 use App\Http\Requests\Unit\StoreRequest;
 use App\Models\Unit;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UnitController extends Controller
 {
@@ -63,5 +65,18 @@ class UnitController extends Controller
         $this->unit::where('id', $id)->delete();
 
         return redirect()->back()->withSuccess('Berhasil Hapus Data');
+    }
+
+    /**
+     * export the specified resource from storage.
+     */
+    public function export()
+    {
+        $month = date('F');
+        $year = date('Y');
+
+        $filename = "Unit Periode $month Tahun $year.xlsx";
+
+        return Excel::download(new UnitExport(), $filename);
     }
 }
