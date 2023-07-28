@@ -32,13 +32,6 @@
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label for="code">Nomer Surat</label>
-                                        </div>
-                                        <div class="col-md-8 form-group">
-                                            <input type="text" id="code" class="form-control" name="code"
-                                                placeholder="Masukan Nomer Surat" value="{{ old('code') }}">
-                                        </div>
-                                        <div class="col-md-4">
                                             <label for="code_agenda">Nomer Agenda</label>
                                         </div>
                                         <div class="col-md-8 form-group">
@@ -46,7 +39,14 @@
                                                 placeholder="Masukan Nomer Agenda" value="{{ old('code_agenda') }}">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="date">Tanggal</label>
+                                            <label for="code">Nomer Surat</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <input type="text" id="code" class="form-control" name="code"
+                                                placeholder="Masukan Nomer Surat" value="{{ old('code') }}">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="date">Tanggal Surat</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="date" id="date" name="date" class="form-control" value="{{ old('date') }}">
@@ -86,7 +86,7 @@
                                         <div class="col-md-8 form-group">
                                             <select name="letter_type_id" id="letter_type_id" class="form-control">
                                                 <option value="" selected disabled>
-                                                    Pilih Unit
+                                                    Pilih Jenis Surat
                                                 </option>
                                                 @foreach ($letterType as $key => $item)
                                                     <option value="{{ $key }}">
@@ -94,6 +94,12 @@
                                                     </option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="note">Keterangan</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <textarea name="note" id="note" cols="30" rows="10" class="form-control">{{ old('note') }}</textarea>
                                         </div>
                                         <div class="col-md-4">
                                             <label for="file">File</label>

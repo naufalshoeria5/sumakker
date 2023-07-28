@@ -87,7 +87,7 @@
                                         <div class="col-md-8 form-group">
                                             <select name="letter_type_id" id="letter_type_id" class="form-control">
                                                 <option value="" selected disabled>
-                                                    Pilih Unit
+                                                    Pilih Jenis Surat
                                                 </option>
                                                 @foreach ($letterType as $key => $item)
                                                     <option value="{{ $key }}" {{ $letter->letter_type_id == $key ? 'selected' : '' }}>
@@ -95,6 +95,12 @@
                                                     </option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="note">Keterangan</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <textarea name="note" id="note" cols="30" rows="10" class="form-control">{{ old('note',$letter->note) }}</textarea>
                                         </div>
                                         <div class="col-md-4">
                                             <label for="file">File</label>

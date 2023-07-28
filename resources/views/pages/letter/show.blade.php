@@ -77,6 +77,12 @@
                                             <input type="text" id="letter_type_id" name="letter_type_id" class="form-control" value="{{ $letter->letterType ? $letter->letterType->name : '-' }}" disabled>
                                         </div>
                                         <div class="col-md-4">
+                                            <label for="note">Keterangan</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <textarea name="note" id="note" cols="30" rows="10" class="form-control">{{ old('note',$letter->note) }}</textarea>
+                                        </div>
+                                        <div class="col-md-4">
                                             <label for="file">File</label>
                                         </div>
                                         <div class="col-md-8 form-group">

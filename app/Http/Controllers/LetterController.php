@@ -79,6 +79,7 @@ class LetterController extends Controller
             'regarding' => $request->regarding,
             'unit_id' => $request->unit_id,
             'letter_type_id' => $request->letter_type_id,
+            'note' => $request->note
         ]);
 
         $this->letter
