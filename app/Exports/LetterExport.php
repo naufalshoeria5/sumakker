@@ -20,6 +20,7 @@ class LetterExport implements FromQuery, ShouldAutoSize, WithMapping, WithHeadin
     {
         $this->request = $request;
     }
+
     /**
      * Get data by chunks.
      *

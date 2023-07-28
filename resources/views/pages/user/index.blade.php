@@ -1,8 +1,8 @@
 <x-app-layout>
 
     @pushOnce('styles')
-        <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
-        <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
+        <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="/assets/vendors/simple-datatables/style.css">
     @endPushOnce
 
     <header class="mb-3">
@@ -106,7 +106,7 @@
     </div>
 
     @push('scripts')
-        <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
+        <script src="/assets/vendors/simple-datatables/simple-datatables.js"></script>
         <script>
             // Simple Datatable
             let table1 = document.querySelector('#table1');
