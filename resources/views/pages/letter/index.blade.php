@@ -57,12 +57,12 @@
                     <div class="row mb-4">
                         <div class="col-3 col-12 col-md-6 col-lg-3">
                             <label for="units">
-                                Staff
+                                Staf
                             </label>
 
                             <select name="units" id="units" class="form-control">
                                 <option value="" selected>
-                                    pilih staff
+                                    pilih staf
                                 </option>
                                 @foreach ($units as $key => $value)
                                     <option value="{{ $key }}" {{ request('unit') == $key ? 'selected' : '' }}>
@@ -110,11 +110,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nomor Surat / Agenda</th>
+                            <th>Nomor Agenda / Surat</th>
                             <th>Tanggal</th>
                             <th>{{ request('status') == 'Surat Masuk' ? 'Dari' : 'Kepada' }}</th>
                             <th>Perihal</th>
-                            <th>Staff</th>
+                            <th>Staf</th>
                             <th>Jenis Surat</th>
                             <th>Action</th>
                         </tr>
@@ -126,7 +126,7 @@
                                     {{ $loop->iteration }}
                                 </td>
                                 <td>
-                                    {{ $item->code }} / {{ $item->code_agenda }}
+                                    {{ $item->code_agenda }} / {{ $item->code }}
                                 </td>
                                 <td>
                                     {{ Carbon\Carbon::parse($item->date)->format('d F Y') }}

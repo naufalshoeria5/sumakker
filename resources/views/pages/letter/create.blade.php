@@ -71,12 +71,12 @@
                                                 placeholder="Perihal">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="unit_id">Staff</label>
+                                            <label for="unit_id">Staf</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <select name="unit_id" id="unit_id" class="form-control">
                                                 <option value="" selected disabled>
-                                                    Pilih Staff
+                                                    Pilih Staf
                                                 </option>
                                                 @foreach ($units as $key => $item)
                                                     <option value="{{ $key }}">

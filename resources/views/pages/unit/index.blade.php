@@ -32,7 +32,7 @@
             <div class="card">
                 <div class="card-header d-flex flex-column flex-sm-row align-items-baseline justify-content-between">
                     <h4 class="card-title">
-                        Unit / Staff
+                        Staf
                     </h4>
 
                     <div class="d-flex justify-between gap-3">
@@ -44,7 +44,7 @@
 
                         <button type="button" data-bs-toggle="modal" data-bs-target="#inlineForm" class="btn btn-sm btn-outline-primary btn-min-width">
                             <i class="ft-plus-square"></i>
-                            Tambah Staff
+                            Tambah Staf
                         </button>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Nama Staff</th>
+                                <th>Nama Staf</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -97,7 +97,7 @@
                 role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel33">Tambah Data Staff </h4>
+                        <h4 class="modal-title" id="myModalLabel33">Tambah Data Staf </h4>
                         <button type="button" class="close" data-bs-dismiss="modal"
                             aria-label="Close">
                             <i data-feather="x"></i>
@@ -106,9 +106,9 @@
                     <form action="/unit" method="POST">
                         @csrf
                         <div class="modal-body">
-                            <label for="name">Nama Staff: </label>
+                            <label for="name">Nama Staf: </label>
                             <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Masukan Nama Staff"
+                                <input type="text" id="name" name="name" placeholder="Masukan Nama Staf"
                                     class="form-control">
                             </div>
                         </div>
@@ -144,9 +144,9 @@
                         @method('put')
                         @csrf
                         <div class="modal-body">
-                            <label for="name">Nama Unit / Staff: </label>
+                            <label for="name">Nama Unit / Staf: </label>
                             <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Masukan Nama Unit / Staff"
+                                <input type="text" id="name" name="name" placeholder="Masukan Nama Unit / Staf"
                                     class="form-control">
                             </div>
                         </div>

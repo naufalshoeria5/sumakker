@@ -33,7 +33,7 @@ class UnitExport implements FromQuery, ShouldAutoSize, WithMapping, WithHeadings
     {
         return [
             'Kode Unit',
-            'Nama Unit / Staff',
+            'Nama Staf',
         ];
     }
 

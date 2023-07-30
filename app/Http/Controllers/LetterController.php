@@ -56,6 +56,7 @@ class LetterController extends Controller
 
         $letters = $this->letter::filter($filter)
             ->latest()
+            ->orderBy('code_agenda')
             ->get();
 
         return view('pages.letter.index', compact('letters', 'units', 'letterType'));

@@ -46,7 +46,7 @@ class LetterExport implements FromQuery, ShouldAutoSize, WithMapping, WithHeadin
             'Tanggal',
             'Tipe',
             'Perihal',
-            'Staff',
+            'Staf',
             'Jenis Surat',
             'Url File'
         ];
