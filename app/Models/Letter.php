@@ -53,5 +53,17 @@ class Letter extends Model implements HasMedia
     {
         // If filter by status exists
         $query->when($filter->status ?? false, fn ($query, $status) => $query->where('status', $status));
+
+        // If Filter By unit exits
+        $query->when($filter->unit ?? false, fn ($query, $unit) => $query->where('unit_id', $unit));
+
+        // If filter by letter type exists
+        $query->when($filter->letterType ?? false, fn ($query, $letterType) => $query->where('letter_type_id', $letterType));
+
+        // If filter by start date exists
+        $query->when($filter->startDate ?? false, fn ($query, $startDate) => $query->where('date', '>=', $startDate));
+
+        // If filter by end date exists
+        $query->when($filter->endDate ?? false, fn ($query, $endDate) => $query->where('date', '<=', $endDate));
     }
 }

@@ -40,17 +40,26 @@ class LetterExport implements FromQuery, ShouldAutoSize, WithMapping, WithHeadin
      */
     public function headings(): array
     {
-        return [
-            'Kode Surat',
-            'Kode Agenda',
-            'Tipe',
+        $array =  [
+            'Nomor Agenda',
+            'Nomor Surat',
             'Tanggal',
-            'Dari',
+            'Tipe',
             'Perihal',
-            'Unit / Staff',
+            'Staff',
             'Jenis Surat',
             'Url File'
         ];
+
+        $from = 'Dari';
+
+        if ($this->request->status == 'Surat Keluar') {
+            $from = 'Kepada';
+        }
+
+        array_splice($array, 4, 0, $from);
+
+        return $array;
     }
 
     /**
@@ -59,10 +68,10 @@ class LetterExport implements FromQuery, ShouldAutoSize, WithMapping, WithHeadin
     public function map($letter): array
     {
         return [
-            $letter->code,
             $letter->code_agenda,
-            $letter->status,
+            $letter->code,
             Carbon::parse($letter->date)->format('d F Y'),
+            $letter->status,
             $letter->from,
             $letter->regarding,
             $letter->unit ? $letter->unit->name : '-',

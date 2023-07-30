@@ -44,7 +44,7 @@
 
                         <button type="button" data-bs-toggle="modal" data-bs-target="#inlineForm" class="btn btn-sm btn-outline-primary btn-min-width">
                             <i class="ft-plus-square"></i>
-                            Tambah Unit
+                            Tambah Staff
                         </button>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Nama Unit / Staff</th>
+                                <th>Nama Staff</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -97,7 +97,7 @@
                 role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel33">Tambah Data Unit </h4>
+                        <h4 class="modal-title" id="myModalLabel33">Tambah Data Staff </h4>
                         <button type="button" class="close" data-bs-dismiss="modal"
                             aria-label="Close">
                             <i data-feather="x"></i>
@@ -106,9 +106,9 @@
                     <form action="/unit" method="POST">
                         @csrf
                         <div class="modal-body">
-                            <label for="name">Nama Unit / Staff: </label>
+                            <label for="name">Nama Staff: </label>
                             <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Masukan Nama Unit / Staff"
+                                <input type="text" id="name" name="name" placeholder="Masukan Nama Staff"
                                     class="form-control">
                             </div>
                         </div>

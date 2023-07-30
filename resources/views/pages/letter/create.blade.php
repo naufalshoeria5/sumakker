@@ -1,5 +1,10 @@
 <x-app-layout>
 
+    @pushOnce('styles')
+        {{-- Custom CSS --}}
+        <link rel="stylesheet" href="/assets/vendors/dropify/dist/css/dropify.min.css">
+    @endPushOnce
+
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
@@ -32,18 +37,18 @@
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <label for="code_agenda">Nomer Agenda</label>
+                                            <label for="code_agenda">Nomor Agenda</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="code_agenda" class="form-control" name="code_agenda"
-                                                placeholder="Masukan Nomer Agenda" value="{{ old('code_agenda') }}">
+                                                placeholder="Masukan Nomor Agenda" value="{{ old('code_agenda') }}">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="code">Nomer Surat</label>
+                                            <label for="code">Nomor Surat</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="code" class="form-control" name="code"
-                                                placeholder="Masukan Nomer Surat" value="{{ old('code') }}">
+                                                placeholder="Masukan Nomor Surat" value="{{ old('code') }}">
                                         </div>
                                         <div class="col-md-4">
                                             <label for="date">Tanggal Surat</label>
@@ -52,11 +57,11 @@
                                             <input type="date" id="date" name="date" class="form-control" value="{{ old('date') }}">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="from">Dari</label>
+                                            <label for="from">{{ request('status') == 'Surat Masuk' ? 'Dari' : 'Kepada' }}</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="from" class="form-control" name="from" value="{{ old('from') }}"
-                                                placeholder="Dari">
+                                                placeholder="{{ request('status') == 'Surat Masuk' ? 'Dari' : 'Kepada' }}">
                                         </div>
                                         <div class="col-md-4">
                                             <label for="regarding">Perihal</label>
@@ -66,12 +71,12 @@
                                                 placeholder="Perihal">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="unit_id">Unit / Staff</label>
+                                            <label for="unit_id">Staff</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <select name="unit_id" id="unit_id" class="form-control">
                                                 <option value="" selected disabled>
-                                                    Pilih Unit
+                                                    Pilih Staff
                                                 </option>
                                                 @foreach ($units as $key => $item)
                                                     <option value="{{ $key }}">
@@ -105,7 +110,8 @@
                                             <label for="file">File</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <input type="file" class="form-control" name="file" id="file">
+                                            <input type="file" class="form-control dropify" name="file" id="file"  data-max-file-size="1M">
+                                            <small class="text-danger">Max File Size 1MB</small>
                                         </div>
 
                                         <div class="col-sm-12 d-flex justify-content-end">
@@ -123,5 +129,13 @@
         </section>
         <!-- // Basic Horizontal form layout section end -->
     </div>
+
+    @pushOnce('scripts')
+    <script src="/assets/vendors/dropify/dist/js/dropify.min.js"></script>
+
+    <script>
+            $('.dropify').dropify();
+    </script>
+    @endPushOnce
 
 </x-app-layout>

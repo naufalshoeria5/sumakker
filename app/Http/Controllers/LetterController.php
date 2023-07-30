@@ -45,13 +45,20 @@ class LetterController extends Controller
     {
         $filter = (object) [
             'status' => request()->input('status'),
+            'unit' => request()->input('unit'),
+            'letterType' => request()->input('letterType'),
+            'startDate' => request()->input('startDate'),
+            'endDate' => request()->input('endDate'),
         ];
+
+        $letterType = $this->letterType::get()->pluck('name', 'id');
+        $units = $this->unit::get()->pluck('name', 'id');
 
         $letters = $this->letter::filter($filter)
             ->latest()
             ->get();
 
-        return view('pages.letter.index', compact('letters'));
+        return view('pages.letter.index', compact('letters', 'units', 'letterType'));
     }
 
     /**

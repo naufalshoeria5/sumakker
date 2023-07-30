@@ -35,13 +35,12 @@
     <section class="section">
         <div class="card">
             <div class="card-header d-flex flex-column flex-sm-row align-items-baseline justify-content-between">
-                <h4 class="card-title">
+                <h4 class="card-title mb-0">
                     {{ request('status') }}
                 </h4>
 
                 <div class="d-flex justify-between gap-3">
-                    {{-- <a href="/admin-panel/letter/regular/export?start_date={{ request('start_date') }}&end_date={{ request('end_date') }}&status={{ request('status') }}" class="mr-2"> --}}
-                    <a href="/surat/export?status={{ request('status') }}" class="mr-2">
+                    <a href="/surat/export?status={{ request('status') }}&startDate={{ request('startDate') }}&endDate={{ request('endDate') }}&unit={{ request('units') }}&letterType={{ request('letterType') }}" class="mr-2">
                         <button type="button" class="btn btn-sm btn-outline-success btn-min-width">
                             Export Data
                         </button>
@@ -53,15 +52,69 @@
                 </div>
             </div>
             <div class="card-body">
+                <hr>
+                <form action="?status={{ request('status') }}">
+                    <div class="row mb-4">
+                        <div class="col-3 col-12 col-md-6 col-lg-3">
+                            <label for="units">
+                                Staff
+                            </label>
+
+                            <select name="units" id="units" class="form-control">
+                                <option value="" selected>
+                                    pilih staff
+                                </option>
+                                @foreach ($units as $key => $value)
+                                    <option value="{{ $key }}" {{ request('unit') == $key ? 'selected' : '' }}>
+                                        {{ $value }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-3 col-12 col-md-6 col-lg-2">
+                            <label for="letterType">
+                                Jenis Surat
+                            </label>
+
+                            <select name="letterType" id="letterType" class="form-control">
+                                <option value="" selected disabled>
+                                    pilih jenis surat
+                                </option>
+
+                                @foreach ($letterType as $key => $value)
+                                    <option value="{{ $key }}" {{ request('letterType') == $key ? 'selected' : '' }}>
+                                        {{ $value }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-3 col-12 col-md-6 col-lg-2">
+                            <label for="startDate">
+                                Tanggal Awal
+                            </label>
+
+                            <input type="date" name="startDate" id="startDate" class="form-control" value="{{ request('startDate') }}">
+                        </div>
+
+                        <div class="col-3 col-12 col-md-6 col-lg-2">
+                            <label for="endDate">
+                                Tanggal Akhir
+                            </label>
+
+                            <input type="date" name="endDate" id="endDate" class="form-control" value="{{ request('endDate') }}">
+                        </div>
+                    </div>
+                </form>
                 <table class="table table-striped" id="table1">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Nomor Surat / Agenda</th>
                             <th>Tanggal</th>
-                            <th>Dari</th>
+                            <th>{{ request('status') == 'Surat Masuk' ? 'Dari' : 'Kepada' }}</th>
                             <th>Perihal</th>
-                            <th>Unit / Staff</th>
+                            <th>Staff</th>
                             <th>Jenis Surat</th>
                             <th>Action</th>
                         </tr>
@@ -125,6 +178,43 @@
         // Simple Datatable
         let table1 = document.querySelector('#table1');
         let dataTable = new simpleDatatables.DataTable(table1);
+
+        $(document).ready(function(){
+            $('#units').on('change', function(e) {
+                let unit = $(this).val();
+
+                changedTrigger('unit',unit);
+            });
+
+            $('#letterType').on('change', function(e) {
+                let letterType = $(this).val();
+
+                changedTrigger('letterType',letterType);
+            });
+
+            $('#startDate').on('change', function(e) {
+                let startDate = $(this).val();
+
+                console.log('a');
+
+                changedTrigger('startDate',startDate);
+            });
+
+            $('#endDate').on('change', function(e) {
+                let endDate = $(this).val();
+
+                changedTrigger('endDate',endDate);
+            });
+        });
+
+        // Trigger Function
+        function changedTrigger (type = 'kotkab', kotkabId) {
+                let queryString = window.location.search;
+                let params = new URLSearchParams(queryString);
+                params.delete(type);
+                params.append(type, kotkabId);
+                document.location.href = "?" + params.toString();
+            }
     </script>
 @endpush
 

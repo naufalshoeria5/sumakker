@@ -51,11 +51,11 @@
                                             <input type="date" id="date" name="date" class="form-control" value="{{ $letter->date }}" disabled>
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="from">Dari</label>
+                                            <label for="from">{{ request('status') == 'Surat Masuk' ? 'Dari' : 'Kepada' }}</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="from" class="form-control" value="{{ $letter->from }}" name="from"
-                                                placeholder="Dari" disabled>
+                                                placeholder="{{ request('status') == 'Surat Masuk' ? 'Dari' : 'Kepada' }}" disabled>
                                         </div>
                                         <div class="col-md-4">
                                             <label for="regarding">Perihal</label>
@@ -65,7 +65,7 @@
                                                 placeholder="Perihal" disabled>
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="unit_id">Unit / Staff</label>
+                                            <label for="unit_id">Staff</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="text" id="unit_id" name="unit_id" class="form-control" value="{{ $letter->unit ? $letter->unit->name : '-' }}" disabled>
@@ -80,7 +80,7 @@
                                             <label for="note">Keterangan</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <textarea name="note" id="note" cols="30" rows="10" class="form-control">{{ old('note',$letter->note) }}</textarea>
+                                            <textarea name="note" id="note" cols="30" rows="10" class="form-control" disabled>{{ old('note',$letter->note) }}</textarea>
                                         </div>
                                         <div class="col-md-4">
                                             <label for="file">File</label>

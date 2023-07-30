@@ -18,8 +18,16 @@ class DashboardController extends Controller
         $userCount = User::count();
         $unitCount = Unit::count();
         $letterTypeCount = LetterType::count();
-        $incomingLetterCount = Letter::filter((object)['status', 'Surat Masuk'])->count();
-        $outcomingLetterCount = Letter::filter((object)['status', 'Surat Keluar'])->count();
+
+        $filter = (object) [
+            'status' => 'Surat Masuk',
+        ];
+        $incomingLetterCount = Letter::filter($filter)->count();
+
+        $filter = (object) [
+            'status' => 'Surat Keluar',
+        ];
+        $outcomingLetterCount = Letter::filter($filter)->count();
 
         return view('new-dashboard', compact('userCount', 'unitCount', 'letterTypeCount', 'incomingLetterCount', 'outcomingLetterCount'));
     }
