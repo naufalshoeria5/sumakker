@@ -195,8 +195,6 @@
             $('#startDate').on('change', function(e) {
                 let startDate = $(this).val();
 
-                console.log('a');
-
                 changedTrigger('startDate',startDate);
             });
 
@@ -209,12 +207,12 @@
 
         // Trigger Function
         function changedTrigger (type = 'kotkab', kotkabId) {
-                let queryString = window.location.search;
-                let params = new URLSearchParams(queryString);
-                params.delete(type);
-                params.append(type, kotkabId);
-                document.location.href = "?" + params.toString();
-            }
+            let queryString = window.location.search;
+            let params = new URLSearchParams(queryString);
+            params.delete(type);
+            params.append(type, kotkabId);
+            document.location.href = "?" + params.toString();
+        }
     </script>
 @endpush
 
