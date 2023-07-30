@@ -52,7 +52,7 @@
                                                 placeholder="Masukan Nomor Agenda" value="{{ old('code_agenda',$letter->code_agenda) }}">
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="date">Tanggal</label>
+                                            <label for="date">Tanggal Surat</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="date" id="date" name="date" class="form-control" value="{{ old('date',$letter->date) }}">

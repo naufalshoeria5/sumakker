@@ -45,7 +45,7 @@
                                                 placeholder="Masukan Nomer Agenda" disabled>
                                         </div>
                                         <div class="col-md-4">
-                                            <label for="date">Tanggal</label>
+                                            <label for="date">Tanggal Surat</label>
                                         </div>
                                         <div class="col-md-8 form-group">
                                             <input type="date" id="date" name="date" class="form-control" value="{{ $letter->date }}" disabled>

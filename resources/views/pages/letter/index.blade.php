@@ -111,7 +111,7 @@
                         <tr>
                             <th>#</th>
                             <th>Nomor Agenda / Surat</th>
-                            <th>Tanggal</th>
+                            <th>Tanggal Surat</th>
                             <th>{{ request('status') == 'Surat Masuk' ? 'Dari' : 'Kepada' }}</th>
                             <th>Perihal</th>
                             <th>Staf</th>

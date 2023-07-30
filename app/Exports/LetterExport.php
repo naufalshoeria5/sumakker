@@ -30,7 +30,7 @@ class LetterExport implements FromQuery, ShouldAutoSize, WithMapping, WithHeadin
     {
         $letter = Letter::query()
             ->filter($this->request)
-            ->orderBy('date', 'asc');
+            ->orderBy('code_agenda');
 
         return $letter;
     }
@@ -43,7 +43,7 @@ class LetterExport implements FromQuery, ShouldAutoSize, WithMapping, WithHeadin
         $array =  [
             'Nomor Agenda',
             'Nomor Surat',
-            'Tanggal',
+            'Tanggal Surat',
             'Tipe',
             'Perihal',
             'Staf',
