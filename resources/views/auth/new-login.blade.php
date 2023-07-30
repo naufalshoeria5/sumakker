@@ -52,7 +52,7 @@
 </div>
 <div class="col-lg-7 d-none d-lg-block">
     <div id="auth-right">
-        <img src="/assets/images/bg/kodiklat.jpg" alt="">
+        {{-- <img src="/assets/images/bg/kodiklat.jpg" alt=""> --}}
     </div>
 </div>
 </x-guest-layout>
