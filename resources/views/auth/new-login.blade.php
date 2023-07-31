@@ -7,10 +7,9 @@
         <div class="auth-logo">
             <a href="/" class="d-flex align-items-center gap-4" style="flex-direction: column">
                 <img src="/assets/images/logo/logo_kodiklat.webp" style="height: 5rem" alt="Logo">
-                <h1>KODIKLAT TNI AD</h1>
+                <h1 style="text-wrap: nowrap">KODIKLAT TNI AD</h1>
             </a>
         </div>
-        <h1 class="auth-title">Log in.</h1>
         <p class="auth-subtitle mb-5" style="font-size: 1.2rem">
             Selamat Datang di <br> SUKEMA (Sistem Pengarsipan Surat Keluar & Surat Masuk) <br>
             Staf Pabanopsdik Sdirdik Kodiklatad
