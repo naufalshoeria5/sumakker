@@ -156,7 +156,7 @@ class LetterController extends Controller
         if ($request->hasFile('file')) {
             $letter->clearMediaCollection('letter');
 
-            $this->letter
+            $letter
                 ->addMedia($request->file('file'))
                 ->toMediaCollection('letter');
         }
