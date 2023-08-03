@@ -58,6 +58,12 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        if ($request->file('file')) {
+            $this->user
+                ->addMedia($request->file('file'))
+                ->toMediaCollection('users');
+        }
+
         $user->save();
 
         return redirect()->route('users.index')->withSuccess('Berhasil Tambah User');
@@ -96,6 +102,14 @@ class UserController extends Controller
 
         if ($request->password) {
             $user['password'] = Hash::make($request->password);
+        }
+
+        if ($request->file('file')) {
+            $user->clearMediaCollection('users');
+
+            $user
+                ->addMedia($request->file('file'))
+                ->toMediaCollection('users');
         }
 
         $user->save();

@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -31,8 +31,14 @@
 
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full form-control" :value="old('email', $user->email)" required autocomplete="username" />
+            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full form-control" :value="old('email', $user->email)" required autocomplete="email" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
+        </div>
+
+        <div>
+            <x-input-label for="file" :value="__('File')" />
+            <x-text-input id="file" name="file" type="file" class="mt-1 block w-full form-control dropify" :data-default-file="$user->getFirstMediaUrl('users')" required autocomplete="file" />
+            <x-input-error class="mt-2" :messages="$errors->get('file')" />
         </div>
 
         <div class="flex items-center gap-4">

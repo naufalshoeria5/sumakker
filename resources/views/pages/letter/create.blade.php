@@ -131,11 +131,11 @@
     </div>
 
     @pushOnce('scripts')
-    <script src="/assets/vendors/dropify/dist/js/dropify.min.js"></script>
+        <script src="/assets/vendors/dropify/dist/js/dropify.min.js"></script>
 
-    <script>
-            $('.dropify').dropify();
-    </script>
+        <script>
+                $('.dropify').dropify();
+        </script>
     @endPushOnce
 
 </x-app-layout>

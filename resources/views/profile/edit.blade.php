@@ -1,4 +1,9 @@
 <x-app-layout>
+    @pushOnce('styles')
+        {{-- Custom CSS --}}
+        <link rel="stylesheet" href="/assets/vendors/dropify/dist/css/dropify.min.css">
+    @endPushOnce
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
@@ -20,4 +25,12 @@
             </div>
         </div>
     </div>
+
+    @pushOnce('scripts')
+        <script src="/assets/vendors/dropify/dist/js/dropify.min.js"></script>
+
+        <script>
+                $('.dropify').dropify();
+        </script>
+    @endPushOnce
 </x-app-layout>

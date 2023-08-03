@@ -1,4 +1,10 @@
 <x-app-layout>
+
+    @pushOnce('styles')
+        {{-- Custom CSS --}}
+        <link rel="stylesheet" href="/assets/vendors/dropify/dist/css/dropify.min.css">
+    @endPushOnce
+
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
@@ -70,6 +76,13 @@
                                             @enderror
                                         </div>
                                         <div class="col-md-4">
+                                            <label for="file">File</label>
+                                        </div>
+                                        <div class="col-md-8 form-group">
+                                            <input type="file" class="form-control dropify" name="file" id="file" data-default-file="{{ $user->getFirstMediaUrl('users') }}"  data-max-file-size="1M">
+                                            <small class="text-danger">Max File Size 1MB</small>
+                                        </div>
+                                        <div class="col-md-4">
                                             <label for="password">Password</label>
                                         </div>
                                         <div class="col-md-8 form-group">
@@ -106,4 +119,12 @@
         </section>
         <!-- // Basic Horizontal form layout section end -->
     </div>
+
+    @pushOnce('scripts')
+        <script src="/assets/vendors/dropify/dist/js/dropify.min.js"></script>
+
+        <script>
+                $('.dropify').dropify();
+        </script>
+    @endPushOnce
 </x-app-layout>

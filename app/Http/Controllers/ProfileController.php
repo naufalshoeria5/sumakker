@@ -32,6 +32,14 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
+        if ($request->file('file')) {
+            $request->user()->clearMediaCollection('users');
+
+            $request->user()
+                ->addMedia($request->file('file'))
+                ->toMediaCollection('users');
+        }
+
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');

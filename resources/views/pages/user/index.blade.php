@@ -59,6 +59,7 @@
                                 <th>Nama Pengguna</th>
                                 <th>Email</th>
                                 <th>Username</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -76,6 +77,9 @@
                                     </td>
                                     <td>
                                         {{ $item->username }}
+                                    </td>
+                                    <td>
+                                        <img width="50" src="{{  $item->getFirstMediaUrl('users') ? $item->getFirstMediaUrl('users') : '-' }}" alt="foto users">
                                     </td>
                                     <td>
                                         <div class="btn-group dropend me-1 mb-1">

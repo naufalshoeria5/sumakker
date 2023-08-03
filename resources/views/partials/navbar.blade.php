@@ -20,7 +20,7 @@
                             </div>
                             <div class="user-img d-flex align-items-center">
                                 <div class="avatar avatar-md">
-                                    <img src="/assets/images/faces/lily.webp">
+                                    <img src="{{ auth()->user()->getFirstMediaUrl('users') }}">
                                 </div>
                             </div>
                         </div>
