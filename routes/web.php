@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\LetterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TypeController;
@@ -20,9 +21,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.new-login');
-});
+Route::get('/', FrontEndController::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

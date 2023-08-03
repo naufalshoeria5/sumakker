@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-muted font-semibold">Unit & Jenis Surat</h6>
+                                        <h6 class="text-muted font-semibold">Staf & Jenis Surat</h6>
                                         <h6 class="font-extrabold mb-0">{{ number_format($unitCount) }} / {{ number_format($letterTypeCount) }}</h6>
                                     </div>
                                 </div>
