@@ -1,5 +1,8 @@
 <x-app-layout>
 
+    <x-slot:title> Sukema - Staf</x-slot>
+    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+
 @push('styles')
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
@@ -70,7 +73,6 @@
                                                 <i class="bi bi-three-dots-vertical"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="javascript:void(0)" onclick="editDataModal({{ $item }})">Edit</a>
                                                 <form method="POST" action="/unit/{{ $key }}">
                                                     @method('delete')
                                                     @csrf

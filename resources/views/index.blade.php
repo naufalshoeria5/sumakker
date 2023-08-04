@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-guest-layout>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pengarsipan Surat Keluar & Surat Masuk. - Sukema</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="/assets/css/app.css">
-    <link rel="stylesheet" href="/assets/css/pages/error.css">
-</head>
+    <x-slot:title> Sukema </x-slot>
+    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
 
-<body>
+    @pushOnce('styles')
+        <link rel="stylesheet" href="/assets/css/pages/error.css">
+    @endPushOnce
+
     <div id="error">
         <div class="error-page container">
             <div class="col-md-8 col-12 offset-md-2">
@@ -101,9 +95,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-</body>
 
-</html>
+</x-guest-layout>

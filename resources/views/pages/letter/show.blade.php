@@ -1,5 +1,8 @@
 <x-app-layout>
 
+    <x-slot:title> Sukema - Detail {{ request('status') }}</x-slot>
+    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+
     <div class="page-heading">
         <div class="page-title">
             <div class="row">

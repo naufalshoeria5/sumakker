@@ -1,5 +1,8 @@
 <x-app-layout>
 
+    <x-slot:title> Sukema - Jenis Surat</x-slot>
+    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+
 @push('styles')
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
@@ -70,7 +73,6 @@
                                                 <i class="bi bi-three-dots-vertical"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Edit</a>
                                                 <form method="POST" action="/type/{{ $key }}">
                                                     @method('delete')
                                                     @csrf

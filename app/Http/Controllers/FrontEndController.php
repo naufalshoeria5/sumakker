@@ -15,10 +15,12 @@ class FrontEndController extends Controller
         $letter = Letter::where('code', $request->q)
             ->first();
 
+        $title = 'Sukema';
+
         if (!$letter) {
             $letter = null;
         }
 
-        return view('index', compact('letter'));
+        return view('index', compact('letter', 'title'));
     }
 }

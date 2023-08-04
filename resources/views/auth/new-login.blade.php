@@ -1,6 +1,9 @@
 <x-guest-layout>
 
-<x-auth-session-status class="mb-4" :status="session('status')" />
+    <x-slot:title> Sukema - Login </x-slot>
+    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+
+    <x-auth-session-status class="mb-4" :status="session('status')" />
 
 <div class="col-lg-5 col-12">
     <div id="auth-left">

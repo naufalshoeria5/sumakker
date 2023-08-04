@@ -1,4 +1,8 @@
 <x-app-layout>
+
+    <x-slot:title> Sukema - Profile</x-slot>
+    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+
     @pushOnce('styles')
         {{-- Custom CSS --}}
         <link rel="stylesheet" href="/assets/vendors/dropify/dist/css/dropify.min.css">
