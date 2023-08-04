@@ -58,7 +58,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        if ($request->file('file')) {
+        if ($request->hasFile('file')) {
             $this->user
                 ->addMedia($request->file('file'))
                 ->toMediaCollection('users');
@@ -104,7 +104,7 @@ class UserController extends Controller
             $user['password'] = Hash::make($request->password);
         }
 
-        if ($request->file('file')) {
+        if ($request->hasFile('file')) {
             $user->clearMediaCollection('users');
 
             $user
