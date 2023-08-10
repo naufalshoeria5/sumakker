@@ -113,8 +113,8 @@
                                             <label for="file">File</label>
                                         </div>
                                         <div class="col-md-8 form-group">
-                                            <input type="file" class="form-control dropify" name="file" id="file"  data-max-file-size="1M">
-                                            <small class="text-danger">Max File Size 1MB</small>
+                                            <input type="file" class="form-control dropify" name="file" id="file"  data-max-file-size="5M">
+                                            <small class="text-danger">Max File Size 5MB</small>
                                         </div>
 
                                         <div class="col-sm-12 d-flex justify-content-end">
