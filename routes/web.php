@@ -22,6 +22,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 
 Route::get('/', FrontEndController::class);
+Route::get('/index-old', [FrontEndController::class, 'oldFunc']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

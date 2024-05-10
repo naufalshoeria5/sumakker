@@ -23,4 +23,21 @@ class FrontEndController extends Controller
 
         return view('index', compact('letter', 'title'));
     }
+
+    /**
+     * Handle the incoming request.
+     */
+    public function oldFunc(Request $request)
+    {
+        $letter = Letter::where('code', $request->q)
+            ->first();
+
+        $title = 'Sukema';
+
+        if (!$letter) {
+            $letter = null;
+        }
+
+        return view('index_old', compact('letter', 'title'));
+    }
 }

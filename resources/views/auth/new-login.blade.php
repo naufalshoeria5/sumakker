@@ -8,14 +8,14 @@
 <div class="col-lg-5 col-12">
     <div id="auth-left">
         <div class="auth-logo">
-            <a href="/" class="d-flex align-items-center gap-4" style="flex-direction: column">
+            <a href="/" class="d-flex align-items-center gap-4 text-decoration-none" style="flex-direction: column">
                 <img src="/assets/images/logo/logo_kodiklat.webp" style="height: 5rem" alt="Logo">
                 <h1 style="text-wrap: nowrap">KODIKLAT TNI AD</h1>
             </a>
         </div>
         <p class="auth-subtitle mb-5" style="font-size: 1.2rem">
-            Selamat Datang di <br> SUKEMA (Sistem Pengarsipan Surat Keluar & Surat Masuk) <br>
-            Staf Pabanopsdik Sdirdik Kodiklatad
+            Selamat Datang di <br> SUMAKKER (Sistem Surat Masuk & Surat Keluar) <br>
+            Staf Pabanrenproggar
         </p>
 
         <form method="POST" action="{{ route('login') }}">

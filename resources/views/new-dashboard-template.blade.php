@@ -23,7 +23,41 @@
             <div class="col-12 col-lg-12">
                 <div class="row">
                     <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card card-sumakker">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="stats-icon purple">
+                                            <i class="bi bi-person" style="font-size: 16px"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 class="text-muted font-semibold">Total User</h6>
+                                        <h6 class="font-extrabold mb-0">{{ number_format($userCount) }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-3 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="stats-icon blue">
+                                            <i class="bi bi-border-all" style="font-size: 16px"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h6 class="text-muted font-semibold">Staf & Jenis Surat</h6>
+                                        <h6 class="font-extrabold mb-0">{{ number_format($unitCount) }} / {{ number_format($letterTypeCount) }}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -35,15 +69,15 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-white font-semibold">Surat Masuk</h6>
-                                        <h6 class="font-extrabold mb-0 text-white">{{ number_format($incomingLetterCount) }}</h6>
+                                        <h6 class="text-muted font-semibold">Surat Masuk</h6>
+                                        <h6 class="font-extrabold mb-0">{{ number_format($incomingLetterCount) }}</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card card-sumakker">
+                        <div class="card">
                             <div class="card-body px-3 py-4-5">
                                 <div class="row">
                                     <div class="col-md-4">
@@ -52,42 +86,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8">
-                                        <h6 class="text-white font-semibold">Surat Keluar</h6>
-                                        <h6 class="font-extrabold mb-0 text-white">{{ number_format($outcomingLetterCount) }}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card card-sumakker">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon purple">
-                                            <i class="bi bi-person" style="font-size: 16px"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="font-semibold text-white">Total User</h6>
-                                        <h6 class="font-extrabold mb-0 text-white">{{ number_format($userCount) }}</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 col-md-6">
-                        <div class="card card-sumakker">
-                            <div class="card-body px-3 py-4-5">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="stats-icon blue">
-                                            <i class="bi bi-border-all" style="font-size: 16px"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h6 class="font-semibold text-white">Staf & Jenis Surat</h6>
-                                        <h6 class="font-extrabold mb-0 text-white">{{ number_format($unitCount) }} / {{ number_format($letterTypeCount) }}</h6>
+                                        <h6 class="text-muted font-semibold">Surat Keluar</h6>
+                                        <h6 class="font-extrabold mb-0">{{ number_format($outcomingLetterCount) }}</h6>
                                     </div>
                                 </div>
                             </div>
