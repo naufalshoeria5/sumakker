@@ -6,7 +6,6 @@ use App\Models\Letter;
 use App\Models\LetterType;
 use App\Models\Unit;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {

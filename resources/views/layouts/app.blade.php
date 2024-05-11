@@ -9,7 +9,7 @@
         <meta http-equiv="Cache-control" content="public">
         <meta name="author" content="Bandung Dev">
 
-        <title>{{ $title ?? config('app.name', 'Sukema') }}</title>
+        <title>{{ $title ?? config('app.name', 'Sumakker') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">

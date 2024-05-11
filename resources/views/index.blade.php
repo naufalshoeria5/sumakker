@@ -21,7 +21,7 @@
                             <img class="img-error mb-3" src="/assets/images/logo/logo_kodiklat.webp" alt="Not Found" width="150">
 
                             <!-- Page heading-->
-                            <h4 class="mb-5 text-white">Sistem surat masuk dan keluar <p class="text-uppercase">Pabanrenproggar</p></h4>
+                            <h4 class="mb-5 text-white">Surat Masuk dan Surat Keluar <p class="text-uppercase">SPabanrenproggar</p></h4>
 
                             <!-- to get an API token!-->
                             <form class="form-subscribe">

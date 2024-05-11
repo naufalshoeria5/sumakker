@@ -1,7 +1,7 @@
 <x-guest-layout>
 
-    <x-slot:title> Sukema - Login </x-slot>
-    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+    <x-slot:title> Sumakker - Login </x-slot>
+    <x-slot:description>Surat Masuk dan Surat Keluar di Staff Pabanrenproggar</x-slot>
 
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
