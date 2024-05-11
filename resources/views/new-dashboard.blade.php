@@ -1,7 +1,7 @@
 <x-app-layout>
 
-    <x-slot:title> Sukema - Dashboard</x-slot>
-    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+    <x-slot:title> Sumakker - Dashboard</x-slot>
+    <x-slot:description>Surat Masuk & Surat Keluar</x-slot>
 
 <div class="page-heading" style="height: 70vh">
     <div class="page-title">

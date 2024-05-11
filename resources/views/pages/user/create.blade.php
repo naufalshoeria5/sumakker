@@ -1,7 +1,7 @@
 <x-app-layout>
 
-    <x-slot:title> Sukema - Tambah Pengguna</x-slot>
-    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+    <x-slot:title> Sumakker - Tambah Pengguna</x-slot>
+    <x-slot:description>Surat Masuk & Surat Keluar</x-slot>
 
     @pushOnce('styles')
         {{-- Custom CSS --}}
