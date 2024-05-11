@@ -1,7 +1,7 @@
 <x-app-layout>
 
-    <x-slot:title> Sukema - Jenis Surat</x-slot>
-    <x-slot:description>Sistem Pengarsipan Surat Keluar & Surat Masuk</x-slot>
+    <x-slot:title> Sumakker - Jenis Surat</x-slot>
+    <x-slot:description>Surat Masuk & Surat Keluar</x-slot>
 
 @push('styles')
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">

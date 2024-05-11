@@ -64,6 +64,9 @@ class UserController extends Controller
                 ->toMediaCollection('users');
         }
 
+
+        dd($request->all());
+
         $user->save();
 
         return redirect()->route('users.index')->withSuccess('Berhasil Tambah User');

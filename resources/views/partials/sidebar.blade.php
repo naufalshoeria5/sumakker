@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="/dashboard">
+                    <a href="/">
                         {{-- <img src="/assets/images/logo/logo_kodiklat.webp" alt="Logo" style="height: 3.2rem"> --}}
                         <small style="font-size: 0.70em" class="text-white">SUMAKKER</small>
                     </a>
