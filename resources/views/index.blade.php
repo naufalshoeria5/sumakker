@@ -7,7 +7,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">SUMAKKER</a>
+                <a class="navbar-brand" style="color: #2c4e80" href="#!">SUMAKKER</a>
                 <a href="/login" class="btn btn-lg btn-outline-primary btn-login-welcome">Login</a>
                 {{-- <a class="btn btn-primary" href="#signup">Login</a> --}}
             </div>
