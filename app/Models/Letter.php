@@ -35,7 +35,7 @@ class Letter extends Model implements HasMedia
      */
     public function letterType(): BelongsTo
     {
-        return $this->belongsTo(letterType::class, 'letter_type_id', 'id');
+        return $this->belongsTo(LetterType::class, 'letter_type_id', 'id');
     }
 
     /*
