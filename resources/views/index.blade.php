@@ -28,7 +28,7 @@
                                 <!-- Email address input-->
                                 <div class="row">
                                     <div class="col col-md-8">
-                                        <input class="form-control form-control-lg" id="q" type="text" placeholder="Nomor Surat..." name="q" value="{{ request('q') }}"/>
+                                        <input class="form-control form-control-lg invalid" id="q" type="text" placeholder="Nomor Surat..." name="q" value="{{ request('q') }}"/>
                                         <div class="invalid-feedback">no surat wajib diisi</div>
                                     </div>
                                     <div class="col-auto col-md-4">
@@ -109,6 +109,24 @@
                                                                     </tbody>
                                                                 </table>
                                                             </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            @elseif(request('q'))
+                                <section class="section mt-10">
+                                    <div class="row">
+                                        <div class="col-12 col-md-8 offset-md-2">
+                                            <div class="pricing">
+                                                <div class="row justify-content-center">
+                                                    <div class="px-0">
+                                                        <div class="card card-highlighted">
+                                                            <div class="card-header text-center">
+                                                                <h4 class="card-title">Surat Tidak Ditemukan!</h4>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
