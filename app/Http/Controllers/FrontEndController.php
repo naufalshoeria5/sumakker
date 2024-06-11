@@ -13,7 +13,7 @@ class FrontEndController extends Controller
     public function __invoke(Request $request)
     {
         $letter = Letter::where('code', $request->q)
-            ->orWhere('regarding', $request->q)
+            ->orWhere('regarding', 'LIKE', `%$request->q%`)
             ->first();
 
         $title = 'Sukema';
